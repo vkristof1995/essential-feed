@@ -19,6 +19,6 @@ public class RemoteFeedLoader {
     }
     
     public func load() {
-        client.get(from: URL(string: "http://google.com")!)
+        client.get(from: url)
     }
 }
