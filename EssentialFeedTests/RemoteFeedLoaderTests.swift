@@ -50,7 +50,7 @@ class RemoteFeedLoaderTests: XCTestCase {
         return (sut, client)
     }
     
-    class HTTPClientSpy: HTTPClient {
+    private class HTTPClientSpy: HTTPClient {
         var requestedURL: URL?
         
         func get(from url: URL) {
