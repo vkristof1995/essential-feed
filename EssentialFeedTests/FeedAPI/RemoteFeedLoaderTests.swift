@@ -36,7 +36,7 @@ class RemoteFeedLoaderTests: XCTestCase {
     func test_load_deliversErrorOnClientError() {
         let (sut, client) = makeSUT()
         
-        expect(sut, toCompleteWith: .failure(.connectivity)) {
+        expect(sut, toCompleteWith: .failure(RemoteFeedLoader.Error.connectivity)) {
             let clientError = NSError(domain: "Test", code: 0)
             client.complete(with: clientError)
         }
@@ -46,7 +46,7 @@ class RemoteFeedLoaderTests: XCTestCase {
         let (sut, client) = makeSUT()
         
         [199, 201, 300, 400, 500].enumerated().forEach { index, code in
-            expect(sut, toCompleteWith: .failure(.invalidData)) {
+            expect(sut, toCompleteWith: .failure(RemoteFeedLoader.Error.invalidData)) {
                 let json = makeItemsJSON(items: [])
                 client.complete(withStatusCode: code, data: json, at: index)
             }
@@ -56,7 +56,7 @@ class RemoteFeedLoaderTests: XCTestCase {
     func test_deliversErrorOn200HTTPResponseWithInvalidJson() {
         let (sut, client) = makeSUT()
 
-        expect(sut, toCompleteWith: .failure(.invalidData)) {
+        expect(sut, toCompleteWith: .failure(RemoteFeedLoader.Error.invalidData)) {
             let invalidJSON = Data("asd".utf8)
             client.complete(withStatusCode: 200, data: invalidJSON)
         }
@@ -88,7 +88,7 @@ class RemoteFeedLoaderTests: XCTestCase {
         let client = HTTPClientSpy()
         var sut: RemoteFeedLoader? = RemoteFeedLoader(url: url, client: client)
         
-        var capturedResults = [RemoteFeedLoaderResult]()
+        var capturedResults = [LoadFeedResult]()
         sut?.load { capturedResults.append($0) }
         
         sut = nil
@@ -138,12 +138,12 @@ class RemoteFeedLoaderTests: XCTestCase {
     
     private func expect(
         _ sut: RemoteFeedLoader,
-        toCompleteWith result: RemoteFeedLoaderResult,
+        toCompleteWith result: LoadFeedResult,
         when action: () -> Void,
         file: StaticString = #filePath,
         line: UInt = #line
     ) {
-        var capturedResults = [RemoteFeedLoaderResult]()
+        var capturedResults = [LoadFeedResult]()
         sut.load { capturedResults.append($0) }
         
         action()
