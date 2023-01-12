@@ -88,7 +88,7 @@ class RemoteFeedLoaderTests: XCTestCase {
         let client = HTTPClientSpy()
         var sut: RemoteFeedLoader? = RemoteFeedLoader(url: url, client: client)
         
-        var capturedResults = [LoadFeedResult<RemoteFeedLoader.Error>]()
+        var capturedResults = [LoadFeedResult]()
         sut?.load { capturedResults.append($0) }
         
         sut = nil
@@ -138,7 +138,7 @@ class RemoteFeedLoaderTests: XCTestCase {
     
     private func expect(
         _ sut: RemoteFeedLoader,
-        toCompleteWith expectedResult: LoadFeedResult<RemoteFeedLoader.Error>,
+        toCompleteWith expectedResult: LoadFeedResult,
         when action: () -> Void,
         file: StaticString = #filePath,
         line: UInt = #line
@@ -150,7 +150,7 @@ class RemoteFeedLoaderTests: XCTestCase {
             switch (receivedResult, expectedResult) {
             case (.success(let receivedItems), .success(let expectedItems)):
                 XCTAssertEqual(receivedItems, expectedItems, file: file, line: line)
-            case (.failure(let receivedError), .failure(let expectedError)):
+            case (.failure(let receivedError as RemoteFeedLoader.Error), .failure(let expectedError as RemoteFeedLoader.Error)):
                 XCTAssertEqual(receivedError, expectedError, file: file, line: line)
             default:
                 XCTFail("Expected \(expectedResult) got \(receivedResult) instead", file: file, line: line)
