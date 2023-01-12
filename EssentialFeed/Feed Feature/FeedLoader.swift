@@ -4,8 +4,12 @@
 
 import Foundation
 
-public typealias LoadFeedResult = Result<[FeedItem], RemoteFeedLoader.Error>
+public enum LoadFeedResult<Error: Swift.Error> {
+    case success([FeedItem])
+    case failure(Error)
+}
 
 protocol FeedLoader {
-    func load(completion: @escaping (LoadFeedResult) -> Void)
+    associatedtype Error: Swift.Error
+    func load(completion: @escaping (LoadFeedResult<Error>) -> Void)
 }
