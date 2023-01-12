@@ -4,8 +4,6 @@
 
 import Foundation
 
-public typealias RemoteFeedLoaderResult = Result<[FeedItem], RemoteFeedLoader.Error>
-
 public class RemoteFeedLoader: FeedLoader {
     
     public enum Error: Swift.Error {
