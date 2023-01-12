@@ -88,7 +88,7 @@ class RemoteFeedLoaderTests: XCTestCase {
         let client = HTTPClientSpy()
         var sut: RemoteFeedLoader? = RemoteFeedLoader(url: url, client: client)
         
-        var capturedResults = [LoadFeedResult]()
+        var capturedResults = [Result<[FeedItem], Error>]()
         sut?.load { capturedResults.append($0) }
         
         sut = nil
@@ -138,7 +138,7 @@ class RemoteFeedLoaderTests: XCTestCase {
     
     private func expect(
         _ sut: RemoteFeedLoader,
-        toCompleteWith expectedResult: LoadFeedResult,
+        toCompleteWith expectedResult: Result<[FeedItem], Error>,
         when action: () -> Void,
         file: StaticString = #filePath,
         line: UInt = #line
@@ -164,7 +164,7 @@ class RemoteFeedLoaderTests: XCTestCase {
         wait(for: [expectation], timeout: 1.0)
     }
     
-    private func failure(_ error: RemoteFeedLoader.Error) -> LoadFeedResult {
+    private func failure(_ error: RemoteFeedLoader.Error) -> Result<[FeedItem], Error> {
         .failure(error)
     }
     
