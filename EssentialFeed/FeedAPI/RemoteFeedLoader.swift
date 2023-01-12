@@ -4,6 +4,8 @@
 
 import Foundation
 
+public typealias RemoteFeedLoaderResult = Result<[FeedItem], RemoteFeedLoader.Error>
+
 public class RemoteFeedLoader {
     
     public enum Error: Swift.Error {
@@ -23,11 +25,7 @@ public class RemoteFeedLoader {
         client.get(from: url) { result in
             switch result {
             case .success(let (data, response)):
-                if let items = try? FeedItemsMapper.map(data, response) {
-                    completion(.success(items))
-                } else {
-                    completion(.failure(.invalidData))
-                }
+                completion(FeedItemsMapper.map(data, from: response))
             case .failure:
                 completion(.failure(.connectivity))
             }
