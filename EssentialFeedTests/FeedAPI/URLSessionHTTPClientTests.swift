@@ -32,7 +32,7 @@ class URLSEssionHTTPClientTests: XCTestCase {
     }
     
     func test_getFromFurl_performsGETRequestWithURL() {
-        let url = URL(string: "https://google.com")!
+        let url = anyURL()
         
         let exp = expectation(description: "wait for the request")
         URLProtocolStub.observeRequests { request in
@@ -48,7 +48,7 @@ class URLSEssionHTTPClientTests: XCTestCase {
     }
     
     func test_getFromURL_failsOnRequestError() {
-        let url = URL(string: "https://google.com")!
+        let url = anyURL()
         let error = NSError(domain: "any error", code: 1, userInfo: [:])
         URLProtocolStub.stub(data: nil, response: nil,  error: error)
         
@@ -73,6 +73,10 @@ class URLSEssionHTTPClientTests: XCTestCase {
         let sut = URLSessionHTTPClient()
         testForMemoryLeaks(sut, file: file, line: line)
         return sut
+    }
+    
+    private func anyURL() -> URL {
+        URL(string: "https://anyURL.com")!
     }
     
     // MARK: - Helpers
