@@ -27,7 +27,7 @@ class URLSEssionHTTPClientTests: XCTestCase {
         URLProtocolStub.startIntercepringRequest()
         let url = URL(string: "https://google.com")!
         let error = NSError(domain: "any error", code: 1, userInfo: [:])
-        URLProtocolStub.stub(url: url, data: nil, response: nil,  error: error)
+        URLProtocolStub.stub(data: nil, response: nil,  error: error)
         
         let sut = URLSessionHTTPClient()
         
@@ -59,11 +59,11 @@ class URLSEssionHTTPClientTests: XCTestCase {
             let error: Error?
         }
         
-        private static var stubs = [URL: Stub]()
+        private static var stub: Stub?
 
         
-        static func stub(url: URL, data: Data?, response: URLResponse?, error: Error? = nil) {
-            stubs[url] = Stub(data: data, response: response, error: error)
+        static func stub(data: Data?, response: URLResponse?, error: Error? = nil) {
+            stub = Stub(data: data, response: response, error: error)
         }
         
         static func startIntercepringRequest() {
@@ -72,12 +72,11 @@ class URLSEssionHTTPClientTests: XCTestCase {
         
         static func stopIntercepringRequest() {
             URLProtocol.unregisterClass(URLProtocolStub.self)
+            stub = nil
         }
         
         override class func canInit(with request: URLRequest) -> Bool {
-            guard let url = request.url else { return false }
-            
-            return stubs[url] != nil
+            true
         }
         
         override class func canonicalRequest(for request: URLRequest) -> URLRequest {
@@ -85,10 +84,7 @@ class URLSEssionHTTPClientTests: XCTestCase {
         }
         
         override func startLoading() {
-            guard
-                let url = request.url,
-                let stub = Self.stubs[url]
-            else { return }
+            guard let stub = Self.stub else { return }
             
             if let data = stub.data {
                 client?.urlProtocol(self, didLoad: data)
