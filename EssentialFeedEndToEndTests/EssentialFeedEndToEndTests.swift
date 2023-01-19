@@ -8,21 +8,7 @@ import EssentialFeed
 final class EssentialFeedEndToEndTests: XCTestCase {
 
     func test_endToEndTestServer_matchesFixedTestAccountData() {
-        let url = URL(string: "https://essentialdeveloper.com/feed-case-study/test-api/feed")!
-        let client = URLSessionHTTPClient()
-        let loader = RemoteFeedLoader(url: url, client: client)
-        
-        let exp = expectation(description: "backend call sholud complete")
-        
-        var receivedResult: Result<[FeedItem], Swift.Error>?
-        loader.load { result in
-            receivedResult = result
-            exp.fulfill()
-        }
-        
-        wait(for: [exp], timeout: 10)
-        
-        switch receivedResult {
+        switch getFeedResult() {
         case let .success(items):
             XCTAssertEqual(items.count, 8)
             
@@ -44,6 +30,24 @@ final class EssentialFeedEndToEndTests: XCTestCase {
     }
     
     // MARK: - Helpers
+    
+    private func getFeedResult() -> Result<[FeedItem], Error>? {
+        let url = URL(string: "https://essentialdeveloper.com/feed-case-study/test-api/feed")!
+        let client = URLSessionHTTPClient()
+        let loader = RemoteFeedLoader(url: url, client: client)
+        
+        let exp = expectation(description: "backend call sholud complete")
+        
+        var receivedResult: Result<[FeedItem], Swift.Error>?
+        loader.load { result in
+            receivedResult = result
+            exp.fulfill()
+        }
+        
+        wait(for: [exp], timeout: 10)
+        
+        return receivedResult
+    }
     
     private func expectedItem(at index: Int) -> FeedItem {
         FeedItem(
