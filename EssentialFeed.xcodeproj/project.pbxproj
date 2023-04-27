@@ -128,6 +128,7 @@
 		FF4005652964814D00D04100 /* EssentialFeedTests */ = {
 			isa = PBXGroup;
 			children = (
+				FF4BA5B22978511A00D82810 /* Extension */,
 				FF06691129FAC6E1006AEFC1 /* FeedCache */,
 				FF99C7C829706BF5002950F8 /* FeedAPI */,
 				FF400576296482AE00D04100 /* EssentialFeedTests-Bridging-Header.h */,
@@ -174,7 +175,6 @@
 		FF99C7C829706BF5002950F8 /* FeedAPI */ = {
 			isa = PBXGroup;
 			children = (
-				FF4BA5B22978511A00D82810 /* Extension */,
 				FF400577296482AF00D04100 /* LoadFeedFromRemoteUseCaseTests.swift */,
 				FF9D1E0F29731D9000B10094 /* URLSessionHTTPClientTests.swift */,
 			);
