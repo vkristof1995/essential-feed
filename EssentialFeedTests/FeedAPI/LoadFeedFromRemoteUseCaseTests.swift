@@ -88,7 +88,7 @@ class LoadFeedFromRemoteUseCaseTests: XCTestCase {
         let client = HTTPClientSpy()
         var sut: RemoteFeedLoader? = RemoteFeedLoader(url: url, client: client)
         
-        var capturedResults = [Result<[FeedItem], Error>]()
+        var capturedResults = [Result<[FeedImage], Error>]()
         sut?.load { capturedResults.append($0) }
         
         sut = nil
@@ -110,8 +110,8 @@ class LoadFeedFromRemoteUseCaseTests: XCTestCase {
         return (sut, client)
     }
     
-    private func makeItem(id: UUID, description: String? = nil, location: String? = nil, imageURL: URL) -> (model: FeedItem, json: [String: Any]) {
-        let item = FeedItem(id: id, description: description, location: location, imageURL: imageURL)
+    private func makeItem(id: UUID, description: String? = nil, location: String? = nil, imageURL: URL) -> (model: FeedImage, json: [String: Any]) {
+        let item = FeedImage(id: id, description: description, location: location, url: imageURL)
         let json = [
             "id": id.uuidString,
             "description": description,
@@ -132,7 +132,7 @@ class LoadFeedFromRemoteUseCaseTests: XCTestCase {
     
     private func expect(
         _ sut: RemoteFeedLoader,
-        toCompleteWith expectedResult: Result<[FeedItem], Error>,
+        toCompleteWith expectedResult: Result<[FeedImage], Error>,
         when action: () -> Void,
         file: StaticString = #filePath,
         line: UInt = #line
@@ -158,7 +158,7 @@ class LoadFeedFromRemoteUseCaseTests: XCTestCase {
         wait(for: [expectation], timeout: 1.0)
     }
     
-    private func failure(_ error: RemoteFeedLoader.Error) -> Result<[FeedItem], Error> {
+    private func failure(_ error: RemoteFeedLoader.Error) -> Result<[FeedImage], Error> {
         .failure(error)
     }
     
