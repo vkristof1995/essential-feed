@@ -90,16 +90,8 @@ class URLSEssionHTTPClientTests: XCTestCase {
         Data("any".utf8)
     }
     
-    private var anyError: Error {
-        NSError(domain: "any", code: 0)
-    }
-    
     private var anyNonHTTPURLResponse: URLResponse {
         URLResponse(url: anyURL, mimeType: nil, expectedContentLength: 0, textEncodingName: nil)
-    }
-    
-    private var anyURL: URL {
-        URL(string: "https://anyURL.com")!
     }
     
     private var anyHTTPURLResponse: HTTPURLResponse? {
