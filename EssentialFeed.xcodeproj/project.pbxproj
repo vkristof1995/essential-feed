@@ -28,6 +28,7 @@
 		FF99C7C529706337002950F8 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF99C7C429706337002950F8 /* HTTPClient.swift */; };
 		FF99C7C729706367002950F8 /* FeedItemsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF99C7C629706367002950F8 /* FeedItemsMapper.swift */; };
 		FF9D1E1029731D9000B10094 /* URLSessionHTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9D1E0F29731D9000B10094 /* URLSessionHTTPClientTests.swift */; };
+		FFAA0CA72A1545CB009C75FF /* ValidateFeedCacheUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA0CA62A1545CB009C75FF /* ValidateFeedCacheUseCaseTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		FF99C7C429706337002950F8 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		FF99C7C629706367002950F8 /* FeedItemsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemsMapper.swift; sourceTree = "<group>"; };
 		FF9D1E0F29731D9000B10094 /* URLSessionHTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClientTests.swift; sourceTree = "<group>"; };
+		FFAA0CA62A1545CB009C75FF /* ValidateFeedCacheUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateFeedCacheUseCaseTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				FF31674F2A0A871C00051D70 /* Helpers */,
 				FF06691229FAC6F5006AEFC1 /* CacheFeedUseCaseTests.swift */,
 				FF31674D2A0A865000051D70 /* LoadFeedFromCacheUseCaseTests.swift */,
+				FFAA0CA62A1545CB009C75FF /* ValidateFeedCacheUseCaseTests.swift */,
 			);
 			path = FeedCache;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFAA0CA72A1545CB009C75FF /* ValidateFeedCacheUseCaseTests.swift in Sources */,
 				FF400578296482AF00D04100 /* LoadFeedFromRemoteUseCaseTests.swift in Sources */,
 				FF9D1E1029731D9000B10094 /* URLSessionHTTPClientTests.swift in Sources */,
 				FF06691329FAC6F5006AEFC1 /* CacheFeedUseCaseTests.swift in Sources */,
