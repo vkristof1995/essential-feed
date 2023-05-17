@@ -151,8 +151,8 @@
 			isa = PBXGroup;
 			children = (
 				FF40055C2964814C00D04100 /* EssentialFeed.h */,
-				FF1CF6AF2A018A3A00309C43 /* FeedCache */,
 				FF4005752964822300D04100 /* Feed Feature */,
+				FF1CF6AF2A018A3A00309C43 /* FeedCache */,
 				FF40057929649BBA00D04100 /* FeedAPI */,
 			);
 			path = EssentialFeed;
