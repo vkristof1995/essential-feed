@@ -32,6 +32,7 @@
 		FF9C96C52A1E841C00E3B2DB /* FeedCachePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9C96C42A1E841C00E3B2DB /* FeedCachePolicy.swift */; };
 		FF9D1E1029731D9000B10094 /* URLSessionHTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9D1E0F29731D9000B10094 /* URLSessionHTTPClientTests.swift */; };
 		FFAA0CA72A1545CB009C75FF /* ValidateFeedCacheUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA0CA62A1545CB009C75FF /* ValidateFeedCacheUseCaseTests.swift */; };
+		FFE151012A1FE29C00D7F94C /* CodableFeedStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE151002A1FE29C00D7F94C /* CodableFeedStoreTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		FF9C96C42A1E841C00E3B2DB /* FeedCachePolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCachePolicy.swift; sourceTree = "<group>"; };
 		FF9D1E0F29731D9000B10094 /* URLSessionHTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClientTests.swift; sourceTree = "<group>"; };
 		FFAA0CA62A1545CB009C75FF /* ValidateFeedCacheUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateFeedCacheUseCaseTests.swift; sourceTree = "<group>"; };
+		FFE151002A1FE29C00D7F94C /* CodableFeedStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableFeedStoreTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				FF06691229FAC6F5006AEFC1 /* CacheFeedUseCaseTests.swift */,
 				FF31674D2A0A865000051D70 /* LoadFeedFromCacheUseCaseTests.swift */,
 				FFAA0CA62A1545CB009C75FF /* ValidateFeedCacheUseCaseTests.swift */,
+				FFE151002A1FE29C00D7F94C /* CodableFeedStoreTests.swift */,
 			);
 			path = FeedCache;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFE151012A1FE29C00D7F94C /* CodableFeedStoreTests.swift in Sources */,
 				FF55BF892A154A68000CE138 /* FeedCacheTestHelpers.swift in Sources */,
 				FFAA0CA72A1545CB009C75FF /* ValidateFeedCacheUseCaseTests.swift in Sources */,
 				FF400578296482AF00D04100 /* LoadFeedFromRemoteUseCaseTests.swift in Sources */,
