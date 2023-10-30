@@ -127,6 +127,7 @@
 		FF9C96C42A1E841C00E3B2DB /* FeedCachePolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCachePolicy.swift; sourceTree = "<group>"; };
 		FF9D1E0F29731D9000B10094 /* URLSessionHTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClientTests.swift; sourceTree = "<group>"; };
 		FFAA0CA62A1545CB009C75FF /* ValidateFeedCacheUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateFeedCacheUseCaseTests.swift; sourceTree = "<group>"; };
+		FFE73F3B2AEFFA24007727DA /* EssentialFeediOS.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = EssentialFeediOS.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +218,7 @@
 		FF2DBBF52AEFF626004F5AAD /* EssentialFeediOSTests */ = {
 			isa = PBXGroup;
 			children = (
+				FFE73F3B2AEFFA24007727DA /* EssentialFeediOS.xctestplan */,
 				FF2DBC002AEFF968004F5AAD /* FeedViewControllerTests.swift */,
 				FF2DBBFF2AEFF968004F5AAD /* EssentialFeediOSTests-Bridging-Header.h */,
 			);
