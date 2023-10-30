@@ -73,7 +73,7 @@ final class FeedViewControllerTests: XCTestCase {
         let (sut, loader) = makeSUT()
         
         sut.simulateAppearance()
-        loader.completeFeedLoading()
+        loader.completeFeedLoading(at: 0)
         
         XCTAssertFalse(sut.isShowingLoadingIndicator)
     }
@@ -90,9 +90,10 @@ final class FeedViewControllerTests: XCTestCase {
         let (sut, loader) = makeSUT()
         
         sut.simulateUserInitiatedFeedReload()
-        loader.completeFeedLoading()
         
-        XCTAssertFalse(sut.isShowingLoadingIndicator)
+        
+        loader.completeFeedLoading(at: 1)
+        XCTAssertFalse(sut.isShowingLoadingIndicator, "Expected no loading indicator once user initiated loading is completed")
     }
     
     // MARK: - Helpers
@@ -117,8 +118,8 @@ final class FeedViewControllerTests: XCTestCase {
             completions.append(completion)
         }
         
-        func completeFeedLoading() {
-            completions[0](.success([]))
+        func completeFeedLoading(at index: Int) {
+            completions[index](.success([]))
         }
     }
 }
