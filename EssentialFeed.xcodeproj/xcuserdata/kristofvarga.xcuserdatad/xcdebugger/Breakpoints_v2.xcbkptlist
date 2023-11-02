@@ -68,53 +68,5 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "87AC4CF9-1262-4844-AF58-7091A5ED5373"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "EssentialFeediOS/FeedViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "87AC4CF9-1262-4844-AF58-7091A5ED5373 - 3c1de5fae653d742"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Foundation.Data, Swift.Error&gt;) -&gt; () in EssentialFeediOS.FeedViewController.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
-                  moduleName = "EssentialFeediOS"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kristofvarga/Library/Mobile%20Documents/com~apple~CloudDocs/Essential%20Developers/project/EssentialFeed/EssentialFeediOS/FeedViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "65"
-                  endingLineNumber = "65"
-                  offsetFromSymbolStart = "248">
-               </Location>
-               <Location
-                  uuid = "87AC4CF9-1262-4844-AF58-7091A5ED5373 - 39ae5682abb9207d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "implicit closure #1 (Foundation.Data) -&gt; Swift.Optional&lt;__C.UIImage&gt; in closure #1 (Swift.Result&lt;Foundation.Data, Swift.Error&gt;) -&gt; () in EssentialFeediOS.FeedViewController.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
-                  moduleName = "EssentialFeediOS"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kristofvarga/Library/Mobile%20Documents/com~apple~CloudDocs/Essential%20Developers/project/EssentialFeed/EssentialFeediOS/FeedViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "65"
-                  endingLineNumber = "65"
-                  offsetFromSymbolStart = "76">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
