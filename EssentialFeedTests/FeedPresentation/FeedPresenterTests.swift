@@ -4,7 +4,7 @@
 
 import XCTest
 
-private final class FeedPresenter {
+final class FeedPresenter {
     init(view: Any) {
 
     }
