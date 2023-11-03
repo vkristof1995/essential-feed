@@ -66,6 +66,38 @@
             endingLineNumber = "10"
             landmarkName = "assertThatRetrieveDeliversFailureOnRetrievalError(on:file:line:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9B0DE9C2-B26E-461B-B5B8-2D877DD6A1EE - c276d95b66917875"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EssentialFeedTests.FailableRetrieveFeedStoreSpecs&lt; where &#x3c4;_0_0: __C.XCTestCase&gt;.assertThatRetrieveDeliversFailureOnRetrievalError(on: EssentialFeed.FeedStore, file: Swift.StaticString, line: Swift.UInt) -&gt; ()"
+                  moduleName = "EssentialFeedTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kristofvarga/Library/Mobile%20Documents/com~apple~CloudDocs/Essential%20Developers/project/EssentialFeed/EssentialFeedTests/FeedCache/XCTestCase+FailableRetrieveFeedStoreSpecs.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "10"
+                  endingLineNumber = "10"
+                  offsetFromSymbolStart = "184">
+               </Location>
+               <Location
+                  uuid = "9B0DE9C2-B26E-461B-B5B8-2D877DD6A1EE - c276d95b66917875"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EssentialFeedTests.FailableRetrieveFeedStoreSpecs&lt; where &#x3c4;_0_0: __C.XCTestCase&gt;.assertThatRetrieveDeliversFailureOnRetrievalError(on: EssentialFeed.FeedStore, file: Swift.StaticString, line: Swift.UInt) -&gt; ()"
+                  moduleName = "EssentialFeedTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kristofvarga/Library/Mobile%20Documents/com~apple~CloudDocs/Essential%20Developers/project/EssentialFeed/EssentialFeedTests/FeedCache/XCTestCase+FailableRetrieveFeedStoreSpecs.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "10"
+                  endingLineNumber = "10"
+                  offsetFromSymbolStart = "296">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
