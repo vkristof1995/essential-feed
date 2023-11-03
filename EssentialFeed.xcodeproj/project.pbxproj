@@ -258,8 +258,7 @@
 		FF2DBBEB2AEFF625004F5AAD /* EssentialFeediOS */ = {
 			isa = PBXGroup;
 			children = (
-				FF54FA292AF4ECC7005BB57C /* Views */,
-				FF54FA282AF4ECC1005BB57C /* Controllers */,
+				FF54FA332AF4F5AA005BB57C /* FeedUI */,
 			);
 			path = EssentialFeediOS;
 			sourceTree = "<group>";
@@ -410,6 +409,15 @@
 				FF2DBC002AEFF968004F5AAD /* FeedViewControllerTests.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FF54FA332AF4F5AA005BB57C /* FeedUI */ = {
+			isa = PBXGroup;
+			children = (
+				FF54FA292AF4ECC7005BB57C /* Views */,
+				FF54FA282AF4ECC1005BB57C /* Controllers */,
+			);
+			path = FeedUI;
 			sourceTree = "<group>";
 		};
 		FF55BF8A2A154B43000CE138 /* Helpers */ = {
