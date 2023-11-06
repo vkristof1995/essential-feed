@@ -11,13 +11,13 @@ extension FeedUIIntegrationTests {
         
         // MARK: - FeedLoader
         
-        private var feedRequests = [(LoadFeedResult) -> Void]()
+        private var feedRequests = [(FeedLoader.Result) -> Void]()
         
         var loadFeedCallCount: Int {
             return feedRequests.count
         }
         
-        func load(completion: @escaping (LoadFeedResult) -> Void) {
+        func load(completion: @escaping (FeedLoader.Result) -> Void) {
             feedRequests.append(completion)
         }
         
