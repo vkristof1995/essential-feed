@@ -48,7 +48,7 @@ class LoadFeedImageDataFromRemoteUseCaseTests: XCTestCase {
 
         samples.enumerated().forEach { index, code in
             expect(sut, toCompleteWith: failure(.invalidData), when: {
-                client.complete(withStatusCode: code, data: anyData, at: index)
+                client.complete(withStatusCode: code, data: anyData(), at: index)
             })
         }
     }
@@ -87,10 +87,10 @@ class LoadFeedImageDataFromRemoteUseCaseTests: XCTestCase {
         let nonEmptyData = Data("non-empty data".utf8)
 
         var received = [FeedImageDataLoader.Result]()
-        let task = sut.loadImageData(from: anyURL) { received.append($0) }
+        let task = sut.loadImageData(from: anyURL()) { received.append($0) }
         task.cancel()
 
-        client.complete(withStatusCode: 404, data: anyData)
+        client.complete(withStatusCode: 404, data: anyData())
         client.complete(withStatusCode: 200, data: nonEmptyData)
         client.complete(with: anyNSError())
 
@@ -102,15 +102,15 @@ class LoadFeedImageDataFromRemoteUseCaseTests: XCTestCase {
         var sut: RemoteFeedImageDataLoader? = RemoteFeedImageDataLoader(client: client)
 
         var capturedResults = [FeedImageDataLoader.Result]()
-        _ = sut?.loadImageData(from: anyURL) { capturedResults.append($0) }
+        _ = sut?.loadImageData(from: anyURL()) { capturedResults.append($0) }
 
         sut = nil
-        client.complete(withStatusCode: 200, data: anyData)
+        client.complete(withStatusCode: 200, data: anyData())
 
         XCTAssertTrue(capturedResults.isEmpty)
     }
 
-    private func makeSUT(url: URL = anyURL, file: StaticString = #file, line: UInt = #line) -> (sut: RemoteFeedImageDataLoader, client: HTTPClientSpy) {
+    private func makeSUT(url: URL = anyURL(), file: StaticString = #file, line: UInt = #line) -> (sut: RemoteFeedImageDataLoader, client: HTTPClientSpy) {
         let client = HTTPClientSpy()
         let sut = RemoteFeedImageDataLoader(client: client)
         trackForMemoryLeaks(sut, file: file, line: line)

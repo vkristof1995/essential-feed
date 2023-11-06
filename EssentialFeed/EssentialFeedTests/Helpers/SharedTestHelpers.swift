@@ -8,10 +8,10 @@ func anyNSError() -> NSError {
     NSError(domain: "any", code: 0)
 }
 
-var anyURL: URL {
-    URL(string: "https://anyURL.com")!
+func anyURL() -> URL {
+    URL(string: "https://anyURL().com")!
 }
 
-var anyData: Data {
+func anyData() -> Data {
     Data("any".utf8)
 }

@@ -15,7 +15,7 @@ class LoadFeedImageDataFromCacheUseCaseTests: XCTestCase {
 
     func test_loadImageDataFromURL_requestsStoredDataForURL() {
         let (sut, store) = makeSUT()
-        let url = anyURL
+        let url = anyURL()
 
         _ = sut.loadImageData(from: url) { _ in }
 
@@ -41,7 +41,7 @@ class LoadFeedImageDataFromCacheUseCaseTests: XCTestCase {
 
     func test_loadImageDataFromURL_deliversStoredDataOnFoundData() {
         let (sut, store) = makeSUT()
-        let foundData = anyData
+        let foundData = anyData()
 
         expect(sut, toCompleteWith: .success(foundData), when: {
             store.completeRetrieval(with: foundData)
@@ -50,10 +50,10 @@ class LoadFeedImageDataFromCacheUseCaseTests: XCTestCase {
 
     func test_loadImageDataFromURL_doesNotDeliverResultAfterCancellingTask() {
         let (sut, store) = makeSUT()
-        let foundData = anyData
+        let foundData = anyData()
 
         var received = [FeedImageDataLoader.Result]()
-        let task = sut.loadImageData(from: anyURL) { received.append($0) }
+        let task = sut.loadImageData(from: anyURL()) { received.append($0) }
         task.cancel()
 
         store.completeRetrieval(with: foundData)
@@ -68,10 +68,10 @@ class LoadFeedImageDataFromCacheUseCaseTests: XCTestCase {
         var sut: LocalFeedImageDataLoader? = LocalFeedImageDataLoader(store: store)
 
         var received = [FeedImageDataLoader.Result]()
-        _ = sut?.loadImageData(from: anyURL) { received.append($0) }
+        _ = sut?.loadImageData(from: anyURL()) { received.append($0) }
 
         sut = nil
-        store.completeRetrieval(with: anyData)
+        store.completeRetrieval(with: anyData())
 
         XCTAssertTrue(received.isEmpty, "Expected no received results after instance has been deallocated")
     }
@@ -101,7 +101,7 @@ class LoadFeedImageDataFromCacheUseCaseTests: XCTestCase {
     private func expect(_ sut: LocalFeedImageDataLoader, toCompleteWith expectedResult: FeedImageDataLoader.Result, when action: () -> Void, file: StaticString = #file, line: UInt = #line) {
         let exp = expectation(description: "Wait for load completion")
 
-        _ = sut.loadImageData(from: anyURL) { receivedResult in
+        _ = sut.loadImageData(from: anyURL()) { receivedResult in
             switch (receivedResult, expectedResult) {
             case let (.success(receivedData), .success(expectedData)):
                 XCTAssertEqual(receivedData, expectedData, file: file, line: line)

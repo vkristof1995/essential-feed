@@ -6,7 +6,7 @@ import Foundation
 import EssentialFeed
 
 func uniqueImage() -> FeedImage {
-    FeedImage(id: UUID(), description: nil, location: nil, url: anyURL)
+    FeedImage(id: UUID(), description: nil, location: nil, url: anyURL())
 }
 
 func uniqueImageFeed() -> (models: [FeedImage], local: [LocalFeedImage]) {

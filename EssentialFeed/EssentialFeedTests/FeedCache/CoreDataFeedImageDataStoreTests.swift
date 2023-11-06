@@ -10,7 +10,7 @@ class CoreDataFeedImageDataStoreTests: XCTestCase {
     func test_retrieveImageData_deliversNotFoundWhenEmpty() {
         let sut = makeSUT()
 
-        expect(sut, toCompleteRetrievalWith: notFound(), for: anyURL)
+        expect(sut, toCompleteRetrievalWith: notFound(), for: anyURL())
     }
 
     func test_retrieveImageData_deliversNotFoundWhenStoredDataURLDoesNotMatch() {
@@ -18,14 +18,14 @@ class CoreDataFeedImageDataStoreTests: XCTestCase {
         let url = URL(string: "http://a-url.com")!
         let nonMatchingURL = URL(string: "http://another-url.com")!
 
-        insert(anyData, for: url, into: sut)
+        insert(anyData(), for: url, into: sut)
 
         expect(sut, toCompleteRetrievalWith: notFound(), for: nonMatchingURL)
     }
 
     func test_retrieveImageData_deliversFoundDataWhenThereIsAStoredImageDataMatchingURL() {
         let sut = makeSUT()
-        let storedData = anyData
+        let storedData = anyData()
         let matchingURL = URL(string: "http://a-url.com")!
 
         insert(storedData, for: matchingURL, into: sut)
@@ -47,7 +47,7 @@ class CoreDataFeedImageDataStoreTests: XCTestCase {
 
     func test_sideEffects_runSerially() {
         let sut = makeSUT()
-        let url = anyURL
+        let url = anyURL()
 
         let op1 = expectation(description: "Operation 1")
         sut.insert([localImage(url: url)], timestamp: Date()) { _ in
@@ -55,10 +55,10 @@ class CoreDataFeedImageDataStoreTests: XCTestCase {
         }
 
         let op2 = expectation(description: "Operation 2")
-        sut.insert(anyData, for: url) { _ in    op2.fulfill() }
+        sut.insert(anyData(), for: url) { _ in    op2.fulfill() }
 
         let op3 = expectation(description: "Operation 3")
-        sut.insert(anyData, for: url) { _ in op3.fulfill() }
+        sut.insert(anyData(), for: url) { _ in op3.fulfill() }
 
         wait(for: [op1, op2, op3], timeout: 5.0, enforceOrder: true)
     }
