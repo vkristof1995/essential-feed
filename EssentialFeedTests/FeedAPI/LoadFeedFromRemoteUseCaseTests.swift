@@ -11,7 +11,7 @@ class LoadFeedFromRemoteUseCaseTests: XCTestCase {
         let url = URL(string: "http://google.com")!
         let (_, client) = makeSUT(url: url)
         
-        XCTAssertNil(client.requestedURL)
+        XCTAssertTrue(client.requestedURLs.isEmpty)
     }
     
     func test_init_requestDataFromURL() {
@@ -20,7 +20,7 @@ class LoadFeedFromRemoteUseCaseTests: XCTestCase {
         
         sut.load { _ in }
         
-        XCTAssertNotNil(client.requestedURL)
+        XCTAssertFalse(client.requestedURLs.isEmpty)
     }
     
     func test_init_requestDataTwice() {
@@ -160,31 +160,5 @@ class LoadFeedFromRemoteUseCaseTests: XCTestCase {
     
     private func failure(_ error: RemoteFeedLoader.Error) -> LoadFeedResult {
         .failure(error)
-    }
-    
-    private class HTTPClientSpy: HTTPClient {
-        var requestedURL: URL? {
-            requestedURLs.last
-        }
-        
-        var requestedURLs: [URL] {
-            messages.map { $0.url }
-        }
-        
-        private var messages: [(url: URL, completion: (HttpClientResult) -> Void)] = []
-        
-        func get(from url: URL, completion: @escaping (HttpClientResult) -> Void) {
-            messages.append((url, completion))
-        }
-        
-        func complete(with error: Error, at index: Int = 0) {
-            messages[index].completion(.failure(error))
-        }
-        
-        func complete(withStatusCode code: Int, data: Data, at index: Int = 0) {
-            let response = HTTPURLResponse(url: requestedURLs[index], statusCode: code, httpVersion: nil, headerFields: nil)!
-            
-            messages[index].completion(.success((data, response)))
-        }
     }
 }

@@ -11,3 +11,7 @@ var anyError: NSError {
 var anyURL: URL {
     URL(string: "https://anyURL.com")!
 }
+
+var anyData: Data {
+    Data("any".utf8)
+}
