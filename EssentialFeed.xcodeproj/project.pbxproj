@@ -87,6 +87,7 @@
 		FFAA0CA72A1545CB009C75FF /* ValidateFeedCacheUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA0CA62A1545CB009C75FF /* ValidateFeedCacheUseCaseTests.swift */; };
 		FFC411C52AF54E1B00B01B50 /* FeedImagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC411C42AF54E1B00B01B50 /* FeedImagePresenter.swift */; };
 		FFC411C72AF54EA800B01B50 /* FeedImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC411C62AF54EA800B01B50 /* FeedImageViewModel.swift */; };
+		FFEE884D2AF8EE6100DF356B /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEE884C2AF8EE6100DF356B /* ErrorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -222,6 +223,7 @@
 		FFC411C42AF54E1B00B01B50 /* FeedImagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImagePresenter.swift; sourceTree = "<group>"; };
 		FFC411C62AF54EA800B01B50 /* FeedImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageViewModel.swift; sourceTree = "<group>"; };
 		FFE73F3B2AEFFA24007727DA /* EssentialFeediOS.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = EssentialFeediOS.xctestplan; sourceTree = "<group>"; };
+		FFEE884C2AF8EE6100DF356B /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -455,6 +457,7 @@
 				FF54FA4C2AF521FA005BB57C /* Feed.storyboard */,
 				FF54FA522AF528E8005BB57C /* UITableView+Dequeueing.swift */,
 				FF54FA542AF5295D005BB57C /* UIImageView+Animations.swift */,
+				FFEE884C2AF8EE6100DF356B /* ErrorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -837,6 +840,7 @@
 				FF54FA1C2AF3E8DF005BB57C /* FeedImageCell.swift in Sources */,
 				FF54FA6B2AF53C9B005BB57C /* FeedImageDataLoaderPresentationAdapter.swift in Sources */,
 				FF54FA3C2AF5097A005BB57C /* FeedImageCellController.swift in Sources */,
+				FFEE884D2AF8EE6100DF356B /* ErrorView.swift in Sources */,
 				FF54FA6F2AF53D16005BB57C /* FeedViewAdapter.swift in Sources */,
 				FF54FA3E2AF50B7C005BB57C /* FeedUIComposer.swift in Sources */,
 			);
