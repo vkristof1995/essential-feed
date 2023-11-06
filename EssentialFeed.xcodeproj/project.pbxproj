@@ -88,6 +88,7 @@
 		FFC411C52AF54E1B00B01B50 /* FeedImagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC411C42AF54E1B00B01B50 /* FeedImagePresenter.swift */; };
 		FFC411C72AF54EA800B01B50 /* FeedImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC411C62AF54EA800B01B50 /* FeedImageViewModel.swift */; };
 		FFEE884D2AF8EE6100DF356B /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEE884C2AF8EE6100DF356B /* ErrorView.swift */; };
+		FFEE88502AF8EFB800DF356B /* UIRefreshControl+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEE884F2AF8EFB800DF356B /* UIRefreshControl+Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -224,6 +225,7 @@
 		FFC411C62AF54EA800B01B50 /* FeedImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageViewModel.swift; sourceTree = "<group>"; };
 		FFE73F3B2AEFFA24007727DA /* EssentialFeediOS.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = EssentialFeediOS.xctestplan; sourceTree = "<group>"; };
 		FFEE884C2AF8EE6100DF356B /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		FFEE884F2AF8EFB800DF356B /* UIRefreshControl+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIRefreshControl+Helpers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -589,6 +591,7 @@
 			children = (
 				FF54FA1D2AF3EF8F005BB57C /* UIView+Shimmering.swift */,
 				FF54FA522AF528E8005BB57C /* UITableView+Dequeueing.swift */,
+				FFEE884F2AF8EFB800DF356B /* UIRefreshControl+Helpers.swift */,
 				FF54FA542AF5295D005BB57C /* UIImageView+Animations.swift */,
 			);
 			path = Helpers;
@@ -843,6 +846,7 @@
 				FF54FA6D2AF53CE2005BB57C /* FeedLoaderPresentationAdapter.swift in Sources */,
 				FF54FA692AF53C25005BB57C /* WeakRefVirtualProxy.swift in Sources */,
 				FF54FA552AF5295D005BB57C /* UIImageView+Animations.swift in Sources */,
+				FFEE88502AF8EFB800DF356B /* UIRefreshControl+Helpers.swift in Sources */,
 				FF54FA672AF53BA1005BB57C /* MainQueueDispatchDecorator.swift in Sources */,
 				FF0D04EA2AF0031300846016 /* FeedViewController.swift in Sources */,
 				FF54FA1C2AF3E8DF005BB57C /* FeedImageCell.swift in Sources */,
