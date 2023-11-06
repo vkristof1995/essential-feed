@@ -27,7 +27,7 @@ class CacheFeedImageDataUseCaseTests: XCTestCase {
         let (sut, store) = makeSUT()
 
         expect(sut, toCompleteWith: failed(), when: {
-            let insertionError = anyError
+            let insertionError = anyNSError()
             store.completeInsertion(with: insertionError)
         })
     }

@@ -26,7 +26,7 @@ class LoadFeedImageDataFromCacheUseCaseTests: XCTestCase {
         let (sut, store) = makeSUT()
 
         expect(sut, toCompleteWith: failed(), when: {
-            let retrievalError = anyError
+            let retrievalError = anyNSError()
             store.completeRetrieval(with: retrievalError)
         })
     }
@@ -58,7 +58,7 @@ class LoadFeedImageDataFromCacheUseCaseTests: XCTestCase {
 
         store.completeRetrieval(with: foundData)
         store.completeRetrieval(with: .none)
-        store.completeRetrieval(with: anyError)
+        store.completeRetrieval(with: anyNSError())
 
         XCTAssertTrue(received.isEmpty, "Expected no received results after cancelling task")
     }
