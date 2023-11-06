@@ -310,6 +310,7 @@
 			children = (
 				FF31674F2A0A871C00051D70 /* Helpers */,
 				FF06691229FAC6F5006AEFC1 /* CacheFeedUseCaseTests.swift */,
+				FFF06D622AF917D7003E33CE /* CoreDataFeedImageDataStoreTests.swift */,
 				FF31674D2A0A865000051D70 /* LoadFeedFromCacheUseCaseTests.swift */,
 				FFAA0CA62A1545CB009C75FF /* ValidateFeedCacheUseCaseTests.swift */,
 				FFF06D662AF91869003E33CE /* LocalFeedImageDataFromCacheUseCaseTests.swift */,
@@ -368,7 +369,6 @@
 		FF40054F2964814C00D04100 = {
 			isa = PBXGroup;
 			children = (
-				FFF06D622AF917D7003E33CE /* CoreDataFeedImageDataStoreTests.swift */,
 				FF40055B2964814C00D04100 /* EssentialFeed */,
 				FF4005652964814D00D04100 /* EssentialFeedTests */,
 				FF4582192979955E009591D3 /* EssentialFeedEndToEndTests */,
