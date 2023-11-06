@@ -50,7 +50,7 @@
             BlueprintIdentifier = "FF4005582964814C00D04100"
             BuildableName = "EssentialFeed.framework"
             BlueprintName = "EssentialFeed"
-            ReferencedContainer = "container:EssentialFeed/EssentialFeed.xcodeproj">
+            ReferencedContainer = "container:EssentialFeed.xcodeproj">
          </BuildableReference>
       </CodeCoverageTargets>
       <Testables>
@@ -62,7 +62,7 @@
                BlueprintIdentifier = "FF4582172979955E009591D3"
                BuildableName = "EssentialFeedEndToEndTests.xctest"
                BlueprintName = "EssentialFeedEndToEndTests"
-               ReferencedContainer = "container:EssentialFeed/EssentialFeed.xcodeproj">
+               ReferencedContainer = "container:EssentialFeed.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -73,7 +73,7 @@
                BlueprintIdentifier = "FF4005602964814D00D04100"
                BuildableName = "EssentialFeedTests.xctest"
                BlueprintName = "EssentialFeedTests"
-               ReferencedContainer = "container:EssentialFeed/EssentialFeed.xcodeproj">
+               ReferencedContainer = "container:EssentialFeed.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -84,7 +84,7 @@
                BlueprintIdentifier = "FF7D5B312AEFB793000C53C7"
                BuildableName = "EssentialFeesCacheIntegrationTests.xctest"
                BlueprintName = "EssentialFeesCacheIntegrationTests"
-               ReferencedContainer = "container:EssentialFeed/EssentialFeed.xcodeproj">
+               ReferencedContainer = "container:EssentialFeed.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
